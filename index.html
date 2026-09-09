@@ -18,19 +18,17 @@
 }
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:var(--sans);font-weight:300;color:var(--body);background:var(--bg);line-height:1.75}
-
-/* NAV */
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 7vw;background:rgba(250,250,250,0.96);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--rule)}
-.nav-name{font-family:var(--serif);font-size:1.05rem;color:var(--ink);text-decoration:none;letter-spacing:.01em}
+.nav-name{font-family:var(--serif);font-size:1.05rem;color:var(--ink);text-decoration:none}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   text-decoration:none;color:var(--muted);transition:color .15s}
-.nav-links a:hover{color:var(--blue)}
-
-/* HERO */
+.nav-links a:hover{color:var(--blue);text-decoration:none}
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
   align-items:center;padding:80px 7vw 4rem;gap:5rem;background:var(--white)}
 .hero-kicker{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
@@ -43,103 +41,68 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;
 .cta{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.4rem;
   font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.06em;
   text-transform:uppercase;text-decoration:none;border-radius:3px;transition:all .15s}
-.cta-primary{background:var(--blue);color:#fff}
-.cta-primary:hover{background:var(--blue-dk)}
+.cta-primary{background:var(--blue);color:#fff}.cta-primary:hover{background:var(--blue-dk);text-decoration:none}
 .cta-ghost{border:1.5px solid var(--rule);color:var(--muted);background:transparent}
-.cta-ghost:hover{border-color:var(--blue);color:var(--blue)}
+.cta-ghost:hover{border-color:var(--blue);color:var(--blue);text-decoration:none}
 .hero-panel{display:grid;grid-template-columns:1fr 1fr;gap:1px;
   background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
 .stat-box{background:var(--white);padding:2rem 1.5rem;text-align:center}
-.stat-n{font-family:var(--serif);font-size:2.6rem;font-weight:600;
-  color:var(--ink);line-height:1;display:block;margin-bottom:.4rem}
-.stat-l{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--faint);display:block}
+.stat-n{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1;display:block;margin-bottom:.4rem}
+.stat-l{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);display:block}
+.section{padding:7rem 7vw;border-top:1px solid var(--rule)}
+.section:nth-child(odd){background:var(--white)}.section:nth-child(even){background:var(--bg)}
+.sec-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.7rem}
+.sec-title{font-family:var(--serif);font-size:clamp(1.9rem,3vw,2.6rem);font-weight:400;color:var(--ink);margin-bottom:3rem;line-height:1.1}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.card{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:2rem;border-top:3px solid var(--blue)}
+.card-tag{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.9rem;display:block}
+.card h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:.7rem;line-height:1.3}
+.card p{font-size:.85rem;color:var(--muted);line-height:1.75}
 </style>
 <style>
-/* SECTIONS */
-.section{padding:7rem 7vw;border-top:1px solid var(--rule)}
-.section:nth-child(odd){background:var(--white)}
-.section:nth-child(even){background:var(--bg)}
-.sec-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--blue);margin-bottom:.7rem}
-.sec-title{font-family:var(--serif);font-size:clamp(1.9rem,3vw,2.6rem);
-  font-weight:400;color:var(--ink);margin-bottom:3rem;line-height:1.1}
-
-/* RESEARCH CARDS */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.card{background:var(--white);border:1px solid var(--rule);border-radius:4px;
-  padding:2rem;border-top:3px solid var(--blue)}
-.card-tag{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--blue);margin-bottom:.9rem;display:block}
-.card h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--ink);
-  margin-bottom:.7rem;line-height:1.3}
-.card p{font-size:.85rem;color:var(--muted);line-height:1.75}
-
-/* PUBLICATIONS */
 .pub-list{display:flex;flex-direction:column;gap:0}
-.pub-item{display:grid;grid-template-columns:3.5rem 1fr;gap:1.25rem;
-  padding:1.6rem 0;border-bottom:1px solid var(--rule)}
+.pub-item{display:grid;grid-template-columns:3.5rem 1fr;gap:1.25rem;padding:1.6rem 0;border-bottom:1px solid var(--rule)}
 .pub-item:first-child{border-top:1px solid var(--rule)}
 .pub-yr{font-size:.75rem;font-weight:700;color:var(--blue);padding-top:.15rem;text-align:right}
 .pub-body{font-size:.875rem;color:var(--body);line-height:1.7}
 .pub-body strong{color:var(--ink);font-weight:700}
-.pub-journal{font-size:.78rem;color:var(--muted);margin-top:.3rem;display:block;font-style:italic}
-
-/* TIMELINE */
+.pub-journal{font-size:.78rem;color:var(--muted);margin-top:.35rem;display:block;font-style:italic}
+.pub-doi{font-size:.75rem;margin-top:.25rem;display:block}
 .timeline{display:flex;flex-direction:column;gap:0}
-.tl-item{display:grid;grid-template-columns:10rem 1fr;gap:0;padding:2.2rem 0;
-  border-bottom:1px solid var(--rule)}
+.tl-item{display:grid;grid-template-columns:10rem 1fr;gap:0;padding:2.2rem 0;border-bottom:1px solid var(--rule)}
 .tl-item:first-child{border-top:1px solid var(--rule)}
-.tl-period{font-size:.75rem;font-weight:700;color:var(--muted);
-  padding-top:.2rem;padding-right:2.5rem;text-align:right;line-height:1.4}
+.tl-period{font-size:.75rem;font-weight:700;color:var(--muted);padding-top:.2rem;padding-right:2.5rem;text-align:right;line-height:1.4}
 .tl-body h3{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.2rem}
-.tl-body .org{font-size:.82rem;color:var(--blue);margin-bottom:.5rem;display:block;font-weight:400}
+.tl-body .org{font-size:.82rem;margin-bottom:.5rem;display:block;font-weight:400}
 .tl-body p{font-size:.83rem;color:var(--muted);line-height:1.7}
-
-/* EDUCATION */
-.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
 .edu-cell{background:var(--white);padding:1.8rem}
-.edu-deg{font-family:var(--serif);font-size:.95rem;font-weight:400;
-  color:var(--ink);margin-bottom:.35rem;line-height:1.35}
-.edu-inst{font-size:.78rem;color:var(--blue);margin-bottom:.2rem;display:block}
+.edu-deg{font-family:var(--serif);font-size:.95rem;font-weight:400;color:var(--ink);margin-bottom:.35rem;line-height:1.35}
+.edu-inst{font-size:.78rem;margin-bottom:.2rem;display:block}
 .edu-yr{font-size:.72rem;color:var(--faint)}
-
-/* AWARDS */
 .awards-list{display:flex;flex-direction:column;gap:0}
-.award-item{display:grid;grid-template-columns:3.5rem 1fr;gap:1.25rem;
-  padding:1.4rem 0;border-bottom:1px solid var(--rule)}
+.award-item{display:grid;grid-template-columns:3.5rem 1fr;gap:1.25rem;padding:1.4rem 0;border-bottom:1px solid var(--rule)}
 .award-item:first-child{border-top:1px solid var(--rule)}
 .award-yr{font-size:.75rem;font-weight:700;color:var(--blue);text-align:right;padding-top:.1rem}
 .award-name{font-size:.88rem;color:var(--body)}
-
-/* CONTACT */
 .contact-row{display:flex;gap:1rem;flex-wrap:wrap}
-.contact-link{display:inline-flex;align-items:center;gap:.5rem;
-  padding:.7rem 1.2rem;border:1px solid var(--rule);border-radius:3px;
-  text-decoration:none;font-size:.82rem;color:var(--muted);background:var(--white);
-  transition:border-color .15s,color .15s}
-.contact-link:hover{border-color:var(--blue);color:var(--blue)}
+.contact-link{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;
+  border:1px solid var(--rule);border-radius:3px;text-decoration:none;font-size:.82rem;
+  color:var(--muted);background:var(--white);transition:border-color .15s,color .15s}
+.contact-link:hover{border-color:var(--blue);color:var(--blue);text-decoration:none}
 .contact-link svg{width:15px;height:15px;flex-shrink:0;stroke:currentColor}
-
-/* FOOTER */
-footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);
-  font-size:.75rem;color:var(--faint);text-align:center;background:var(--white)}
-
-/* RESPONSIVE */
+footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);font-size:.75rem;color:var(--faint);text-align:center;background:var(--white)}
 @media(max-width:760px){
   .hero{grid-template-columns:1fr;min-height:auto;padding-top:5rem;gap:3rem}
   .hero-panel{grid-template-columns:1fr 1fr}
   .tl-item{grid-template-columns:1fr}
-  .tl-period{text-align:left;padding-right:0;border-left:3px solid var(--blue);
-    padding-left:.8rem;margin-bottom:.5rem}
+  .tl-period{text-align:left;padding-right:0;border-left:3px solid var(--blue);padding-left:.8rem;margin-bottom:.5rem}
   .nav-links{display:none}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-
 <nav>
   <a class="nav-name" href="#">Dante Jr Salvador</a>
   <ul class="nav-links">
@@ -147,13 +110,13 @@ footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);
     <li><a href="#publications">Publications</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
 <header class="hero">
   <div>
-    <p class="hero-kicker">Postdoctoral Research Scientist · University of Basel</p>
+    <p class="hero-kicker">Postdoctoral Research Scientist · <a href="https://ecpm.unibas.ch" target="_blank" style="color:var(--blue)">University of Basel</a></p>
     <h1>Dante Jr<br><span>Salvador</span></h1>
     <p class="hero-bio">Medical doctor, clinical epidemiologist, and health economist leading economic evaluations alongside clinical trials and public health interventions across Switzerland and Europe.</p>
     <div class="hero-ctas">
@@ -169,16 +132,15 @@ footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);
     <div class="stat-box"><span class="stat-n">CH</span><span class="stat-l">Based in Basel</span></div>
   </div>
 </header>
-
 <!-- RESEARCH -->
 <section class="section" id="research">
   <p class="sec-eyebrow">Focus areas</p>
   <h2 class="sec-title">Research</h2>
   <div class="cards">
     <div class="card"><span class="card-tag">Health Economics</span><h3>Economic Evaluation Alongside Trials</h3><p>Cost-effectiveness and cost-utility analyses of clinical interventions in Switzerland and Europe — anticoagulation, SGLT2 inhibitors, GLP-1 receptor agonists, and public health strategies.</p></div>
-    <div class="card"><span class="card-tag">Epidemiology</span><h3>Diabetes & Cardiovascular Disease</h3><p>Associations between diabetes mellitus, atherosclerosis, myocardial fibrosis, and heart failure using hospital cohort data, general population cohorts, and the UK Biobank.</p></div>
+    <div class="card"><span class="card-tag">Epidemiology</span><h3>Diabetes & Cardiovascular Disease</h3><p>Associations between diabetes mellitus, atherosclerosis, myocardial fibrosis, and heart failure using hospital cohort data, general population cohorts, and the <a href="https://www.ukbiobank.ac.uk" target="_blank">UK Biobank</a>.</p></div>
     <div class="card"><span class="card-tag">Evidence Synthesis</span><h3>Systematic Reviews & Meta-Analysis</h3><p>Methodological and applied reviews in cardiology, nutrition epidemiology, and migrant health. Co-author of published frameworks for qualitative synthesis.</p></div>
-    <div class="card"><span class="card-tag">HTA</span><h3>Health Technology Assessment</h3><p>Evidence generation and value communication for pharmaceuticals and devices. Co-founder of CrunchLab Health Analytics, supporting HTA and regulatory submissions in the Philippines.</p></div>
+    <div class="card"><span class="card-tag">HTA</span><h3>Health Technology Assessment</h3><p>Evidence generation and value communication for pharmaceuticals and devices. Co-founder of <a href="https://crunchlab.com.ph" target="_blank">CrunchLab Health Analytics</a>, supporting HTA and regulatory submissions in the Philippines.</p></div>
   </div>
 </section>
 
@@ -187,31 +149,30 @@ footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);
   <p class="sec-eyebrow">Selected works</p>
   <h2 class="sec-title">Publications</h2>
   <div class="pub-list">
-    <div class="pub-item"><div class="pub-yr">2025</div><div class="pub-body">Añonuevo J, Aquino CO, Cunanan E, … <strong>Salvador D Jr</strong>, et al. Cost-of-illness of heart failure with preserved and reduced ejection fraction in the Philippines.<span class="pub-journal">Journal of Medical Economics · 28(1):814–822</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2025</div><div class="pub-body">Montilla PJ, Aquino CO, … <strong>Salvador D Jr</strong>, Añonuevo J. Cost-utility analysis of empagliflozin for heart failure in the Philippines.<span class="pub-journal">Journal of Medical Economics · 28(1):157–167</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2023</div><div class="pub-body"><strong>Salvador D Jr</strong>, Bano A, Wehrli F, et al. Impact of type 2 diabetes on life expectancy and role of kidney disease among inpatients with heart failure in Switzerland.<span class="pub-journal">Cardiovascular Diabetology · 22:174</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2023</div><div class="pub-body"><strong>Salvador D Jr</strong>, Liv P, Norberg M, et al. Changes in fasting plasma glucose and subclinical atherosclerosis: a cohort study from VIPVIZA trial.<span class="pub-journal">Atherosclerosis · 117326</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body"><strong>Salvador D</strong>, Gamba M, Gonzalez-Jaramillo N, et al. Diabetes and Myocardial Fibrosis.<span class="pub-journal">JACC: Cardiovascular Imaging · 15(5):796–808</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body">Tuleja A, <strong>Salvador D</strong>, Muka T, et al. Cost-effectiveness analysis of alternative anticoagulation in suspected heparin-induced thrombocytopenia.<span class="pub-journal">Blood Advances · 6(10):3114–3125</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body">Mesa-Vieira C, Haas AD, … <strong>Salvador D</strong>, et al. Mental health of migrants with pre-migration exposure to armed conflict: a systematic review and meta-analysis.<span class="pub-journal">The Lancet Public Health · 7(5):e469–e481</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body">Pahud de Mortanges A, <strong>Salvador D Jr</strong>, et al. GLP-1 Receptor Agonists and Coronary Arteries: From Mechanisms to Events.<span class="pub-journal">Frontiers in Pharmacology · 13:856111</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body">Taneri PE, Wehrli F, … <strong>Salvador D</strong>, et al. Association Between Ultra-Processed Food Intake and All-Cause Mortality.<span class="pub-journal">American Journal of Epidemiology · kwac039</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2021</div><div class="pub-body">Pahud de Mortanges A, <strong>Salvador D Jr</strong>, et al. The Role of SGLT2 Inhibitors in Atherosclerosis: A Narrative Mini-Review.<span class="pub-journal">Frontiers in Pharmacology · 12:751214</span></div></div>
-    <div class="pub-item"><div class="pub-yr">2020</div><div class="pub-body">Taneri PE, Gómez-Ochoa SA, … <strong>Salvador D Jr</strong>, et al. Anemia and iron metabolism in COVID-19: a systematic review and meta-analysis.<span class="pub-journal">European Journal of Epidemiology · 35(8):763–773</span></div></div>
+    <div class="pub-item"><div class="pub-yr">2025</div><div class="pub-body">Añonuevo J, Aquino CO, Cunanan E, … <strong>Salvador D Jr</strong>, et al. Cost-of-illness of heart failure with preserved and reduced ejection fraction in the Philippines.<span class="pub-journal">Journal of Medical Economics · 28(1):814–822</span><a class="pub-doi" href="https://doi.org/10.1080/13696998.2025.2504269" target="_blank">doi:10.1080/13696998.2025.2504269</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2025</div><div class="pub-body">Montilla PJ, Aquino CO, … <strong>Salvador D Jr</strong>, Añonuevo J. Cost-utility analysis of empagliflozin for heart failure in the Philippines.<span class="pub-journal">Journal of Medical Economics · 28(1):157–167</span><a class="pub-doi" href="https://doi.org/10.1080/13696998.2024.2447180" target="_blank">doi:10.1080/13696998.2024.2447180</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2023</div><div class="pub-body"><strong>Salvador D Jr</strong>, Bano A, Wehrli F, et al. Impact of type 2 diabetes on life expectancy and role of kidney disease among inpatients with heart failure in Switzerland.<span class="pub-journal">Cardiovascular Diabetology · 22:174</span><a class="pub-doi" href="https://doi.org/10.1186/s12933-023-01889-0" target="_blank">doi:10.1186/s12933-023-01889-0</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2023</div><div class="pub-body"><strong>Salvador D Jr</strong>, Liv P, Norberg M, et al. Changes in fasting plasma glucose and subclinical atherosclerosis: a cohort study from VIPVIZA trial.<span class="pub-journal">Atherosclerosis · 117326</span><a class="pub-doi" href="https://doi.org/10.1016/j.atherosclerosis.2023.117326" target="_blank">doi:10.1016/j.atherosclerosis.2023.117326</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body"><strong>Salvador D</strong>, Gamba M, Gonzalez-Jaramillo N, et al. Diabetes and Myocardial Fibrosis.<span class="pub-journal">JACC: Cardiovascular Imaging · 15(5):796–808</span><a class="pub-doi" href="https://doi.org/10.1016/j.jcmg.2021.12.008" target="_blank">doi:10.1016/j.jcmg.2021.12.008</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body">Tuleja A, <strong>Salvador D</strong>, Muka T, et al. Cost-effectiveness analysis of alternative anticoagulation in suspected heparin-induced thrombocytopenia.<span class="pub-journal">Blood Advances · 6(10):3114–3125</span><a class="pub-doi" href="https://doi.org/10.1182/bloodadvances.2022007017" target="_blank">doi:10.1182/bloodadvances.2022007017</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body">Mesa-Vieira C, Haas AD, … <strong>Salvador D</strong>, et al. Mental health of migrants with pre-migration exposure to armed conflict: a systematic review and meta-analysis.<span class="pub-journal">The Lancet Public Health · 7(5):e469–e481</span><a class="pub-doi" href="https://doi.org/10.1016/S2468-2667(22)00061-5" target="_blank">doi:10.1016/S2468-2667(22)00061-5</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body">Pahud de Mortanges A, <strong>Salvador D Jr</strong>, et al. GLP-1 Receptor Agonists and Coronary Arteries: From Mechanisms to Events.<span class="pub-journal">Frontiers in Pharmacology · 13:856111</span><a class="pub-doi" href="https://doi.org/10.3389/fphar.2022.856111" target="_blank">doi:10.3389/fphar.2022.856111</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2022</div><div class="pub-body">Taneri PE, Wehrli F, … <strong>Salvador D</strong>, et al. Association Between Ultra-Processed Food Intake and All-Cause Mortality.<span class="pub-journal">American Journal of Epidemiology · kwac039</span><a class="pub-doi" href="https://doi.org/10.1093/aje/kwac039" target="_blank">doi:10.1093/aje/kwac039</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2021</div><div class="pub-body">Pahud de Mortanges A, <strong>Salvador D Jr</strong>, et al. The Role of SGLT2 Inhibitors in Atherosclerosis: A Narrative Mini-Review.<span class="pub-journal">Frontiers in Pharmacology · 12:751214</span><a class="pub-doi" href="https://doi.org/10.3389/fphar.2021.751214" target="_blank">doi:10.3389/fphar.2021.751214</a></div></div>
+    <div class="pub-item"><div class="pub-yr">2020</div><div class="pub-body">Taneri PE, Gómez-Ochoa SA, … <strong>Salvador D Jr</strong>, et al. Anemia and iron metabolism in COVID-19: a systematic review and meta-analysis.<span class="pub-journal">European Journal of Epidemiology · 35(8):763–773</span><a class="pub-doi" href="https://doi.org/10.1007/s10654-020-00678-5" target="_blank">doi:10.1007/s10654-020-00678-5</a></div></div>
   </div>
 </section>
-
 <!-- EXPERIENCE -->
 <section class="section" id="experience">
   <p class="sec-eyebrow">Career</p>
   <h2 class="sec-title">Experience</h2>
   <div class="timeline">
-    <div class="tl-item"><div class="tl-period">2023 – present</div><div class="tl-body"><h3>Postdoctoral Research Scientist — Health Economics</h3><span class="org">European Center of Pharmaceutical Medicine, University of Basel · Switzerland</span><p>Leading economic evaluations alongside trials of cutting-edge clinical interventions and innovative public health strategies across Switzerland and Europe.</p></div></div>
-    <div class="tl-item"><div class="tl-period">2021 – present</div><div class="tl-body"><h3>Co-founder and Director</h3><span class="org">CrunchLab Health Analytics, Inc. · Philippines</span><p>Health economics and HTA firm focused on evidence generation, synthesis, and value communication for medical products, vaccines, and devices; supporting industry HTA and regulatory submissions.</p></div></div>
-    <div class="tl-item"><div class="tl-period">2018 – 2022</div><div class="tl-body"><h3>Project Lead and Consultant</h3><span class="org">Alliance for Improving Health Outcomes, Inc. · Philippines</span><p>Led national government- and NGO-funded research on health insurance and financing. Developed health and economic projection models for tobacco and alcohol control policy.</p></div></div>
-    <div class="tl-item"><div class="tl-period">2015</div><div class="tl-body"><h3>Executive Assistant to the Secretary of Health</h3><span class="org">Department of Health Central Office · Philippines</span></div></div>
-    <div class="tl-item"><div class="tl-period">2015</div><div class="tl-body"><h3>Junior Consultant</h3><span class="org">UPecon Foundation Inc. · Philippines</span></div></div>
-    <div class="tl-item"><div class="tl-period">2012 – 2014</div><div class="tl-body"><h3>Municipal Health Officer / Rural Physician</h3><span class="org">Department of Health, Northern Samar · Philippines</span><p>Managed a municipal health system serving 25,000 people with a team of 25+ clinical and administrative staff.</p></div></div>
+    <div class="tl-item"><div class="tl-period">2023 – present</div><div class="tl-body"><h3>Postdoctoral Research Scientist — Health Economics</h3><span class="org"><a href="https://ecpm.unibas.ch" target="_blank">European Center of Pharmaceutical Medicine, University of Basel</a> · Switzerland</span><p>Leading economic evaluations alongside trials of cutting-edge clinical interventions and innovative public health strategies across Switzerland and Europe.</p></div></div>
+    <div class="tl-item"><div class="tl-period">2021 – present</div><div class="tl-body"><h3>Co-founder and Director</h3><span class="org"><a href="https://crunchlab.com.ph" target="_blank">CrunchLab Health Analytics, Inc.</a> · Philippines</span><p>Health economics and HTA firm focused on evidence generation, synthesis, and value communication for medical products, vaccines, and devices; supporting industry HTA and regulatory submissions.</p></div></div>
+    <div class="tl-item"><div class="tl-period">2018 – 2022</div><div class="tl-body"><h3>Project Lead and Consultant</h3><span class="org"><a href="https://www.aiho.com.ph" target="_blank">Alliance for Improving Health Outcomes, Inc.</a> · Philippines</span><p>Led national government- and NGO-funded research on health insurance and financing. Developed health and economic projection models for tobacco and alcohol control policy.</p></div></div>
+    <div class="tl-item"><div class="tl-period">2015</div><div class="tl-body"><h3>Executive Assistant to the Secretary of Health</h3><span class="org"><a href="https://www.doh.gov.ph" target="_blank">Department of Health Central Office</a> · Philippines</span></div></div>
+    <div class="tl-item"><div class="tl-period">2015</div><div class="tl-body"><h3>Junior Consultant</h3><span class="org"><a href="https://upecon.upd.edu.ph" target="_blank">UPecon Foundation Inc.</a> · Philippines</span></div></div>
+    <div class="tl-item"><div class="tl-period">2012 – 2014</div><div class="tl-body"><h3>Municipal Health Officer / Rural Physician</h3><span class="org"><a href="https://www.doh.gov.ph" target="_blank">Department of Health</a>, Northern Samar · Philippines</span><p>Managed a municipal health system serving 25,000 people with a team of 25+ clinical and administrative staff.</p></div></div>
   </div>
 </section>
 
@@ -220,12 +181,12 @@ footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);
   <p class="sec-eyebrow">Academic formation</p>
   <h2 class="sec-title">Education</h2>
   <div class="edu-grid">
-    <div class="edu-cell"><div class="edu-deg">PhD Health Sciences<br><em>Epidemiology &amp; Biostatistics</em></div><span class="edu-inst">University of Bern, Switzerland</span><span class="edu-yr">2020–2023 · Summa cum laude · MSCA H2020 Fellow</span></div>
-    <div class="edu-cell"><div class="edu-deg">Master of Public Health<br><em>with Distinction</em></div><span class="edu-inst">University of Sheffield, UK</span><span class="edu-yr">2015–2017 · EuroPubHealth Erasmus Mundus</span></div>
-    <div class="edu-cell"><div class="edu-deg">Master of Public Health<br><em>Bardzo Dobry</em></div><span class="edu-inst">Jagiellonian University, Krakow, Poland</span><span class="edu-yr">2015–2017 · Health Economics &amp; Governance</span></div>
-    <div class="edu-cell"><div class="edu-deg">Master of Public Management</div><span class="edu-inst">Development Academy of the Philippines</span><span class="edu-yr">2012–2014 · Health Systems &amp; Development</span></div>
-    <div class="edu-cell"><div class="edu-deg">Doctor of Medicine</div><span class="edu-inst">University of the Philippines Manila</span><span class="edu-yr">2007–2012</span></div>
-    <div class="edu-cell"><div class="edu-deg">BSc Biology<br><em>Cum Laude</em></div><span class="edu-inst">University of the Philippines Diliman</span><span class="edu-yr">2003–2007</span></div>
+    <div class="edu-cell"><div class="edu-deg">PhD Health Sciences<br><em>Epidemiology &amp; Biostatistics</em></div><a class="edu-inst" href="https://www.ispm.unibe.ch" target="_blank">University of Bern, Switzerland</a><span class="edu-yr">2020–2023 · Summa cum laude · MSCA H2020 Fellow</span></div>
+    <div class="edu-cell"><div class="edu-deg">Master of Public Health<br><em>with Distinction</em></div><a class="edu-inst" href="https://www.sheffield.ac.uk/scharr" target="_blank">University of Sheffield, UK</a><span class="edu-yr">2015–2017 · <a href="https://www.europubhealth.org" target="_blank">EuroPubHealth Erasmus Mundus</a></span></div>
+    <div class="edu-cell"><div class="edu-deg">Master of Public Health<br><em>Bardzo Dobry</em></div><a class="edu-inst" href="https://www.uj.edu.pl/en" target="_blank">Jagiellonian University, Krakow, Poland</a><span class="edu-yr">2015–2017 · Health Economics &amp; Governance</span></div>
+    <div class="edu-cell"><div class="edu-deg">Master of Public Management</div><a class="edu-inst" href="https://www.dap.edu.ph" target="_blank">Development Academy of the Philippines</a><span class="edu-yr">2012–2014 · Health Systems &amp; Development</span></div>
+    <div class="edu-cell"><div class="edu-deg">Doctor of Medicine</div><a class="edu-inst" href="https://upm.edu.ph" target="_blank">University of the Philippines Manila</a><span class="edu-yr">2007–2012</span></div>
+    <div class="edu-cell"><div class="edu-deg">BSc Biology<br><em>Cum Laude</em></div><a class="edu-inst" href="https://upd.edu.ph" target="_blank">University of the Philippines Diliman</a><span class="edu-yr">2003–2007</span></div>
   </div>
 </section>
 
@@ -234,11 +195,11 @@ footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);
   <p class="sec-eyebrow">Recognition</p>
   <h2 class="sec-title">Awards &amp; Grants</h2>
   <div class="awards-list">
-    <div class="award-item"><div class="award-yr">2024</div><div class="award-name">National Finalist, Science &amp; Sustainability — Study UK Alumni Awards, British Council Philippines</div></div>
-    <div class="award-item"><div class="award-yr">2022</div><div class="award-name">Swiss-European Mobility Program — Visiting Postgraduate Researcher, Brunel University London</div></div>
-    <div class="award-item"><div class="award-yr">2020</div><div class="award-name">Marie Skłodowska-Curie Actions (MSCA) H2020–COFUND PhD Research Fellowship, University of Bern</div></div>
+    <div class="award-item"><div class="award-yr">2024</div><div class="award-name">National Finalist, Science &amp; Sustainability — <a href="https://www.britishcouncil.ph/programmes/education/study-uk/alumni-awards" target="_blank">Study UK Alumni Awards, British Council Philippines</a></div></div>
+    <div class="award-item"><div class="award-yr">2022</div><div class="award-name"><a href="https://www.swissuniversities.ch/en/topics/internationalisation/swiss-european-mobility-programme" target="_blank">Swiss-European Mobility Program</a> — Visiting Postgraduate Researcher, <a href="https://www.brunel.ac.uk" target="_blank">Brunel University London</a></div></div>
+    <div class="award-item"><div class="award-yr">2020</div><div class="award-name"><a href="https://marie-sklodowska-curie-actions.ec.europa.eu" target="_blank">Marie Skłodowska-Curie Actions (MSCA) H2020–COFUND</a> PhD Research Fellowship, University of Bern</div></div>
     <div class="award-item"><div class="award-yr">2021</div><div class="award-name">1st Place, Clinical Research Prize — Bern Cardiovascular Research Cluster Annual Meeting</div></div>
-    <div class="award-item"><div class="award-yr">2015</div><div class="award-name">Erasmus Mundus Joint Masters Scholarship in European Public Health</div></div>
+    <div class="award-item"><div class="award-yr">2015</div><div class="award-name"><a href="https://www.europubhealth.org" target="_blank">Erasmus Mundus Joint Masters Scholarship in European Public Health</a></div></div>
   </div>
 </section>
 
@@ -247,25 +208,12 @@ footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);
   <p class="sec-eyebrow">Get in touch</p>
   <h2 class="sec-title">Contact</h2>
   <div class="contact-row">
-    <a href="mailto:dantesalvadormd@gmail.com" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-      dantesalvadormd@gmail.com
-    </a>
-    <a href="https://orcid.org/0000-0002-4738-5628" target="_blank" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h4m0 0V8m0 4v4"/></svg>
-      ORCID 0000-0002-4738-5628
-    </a>
-    <a href="https://www.linkedin.com/in/dantesalvadormd/" target="_blank" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      linkedin.com/in/dantesalvadormd
-    </a>
-    <a href="tel:+41791255352" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.09 12 19.79 19.79 0 0 1 1 4.18 2 2 0 0 1 2.96 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 5.45 5.45l1.17-1.17a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      +41 79 125 5352
-    </a>
+    <a href="mailto:dantesalvadormd@gmail.com" class="contact-link"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>dantesalvadormd@gmail.com</a>
+    <a href="https://orcid.org/0000-0002-4738-5628" target="_blank" class="contact-link"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h4m0 0V8m0 4v4"/></svg>ORCID 0000-0002-4738-5628</a>
+    <a href="https://www.linkedin.com/in/dantesalvadormd/" target="_blank" class="contact-link"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>linkedin.com/in/dantesalvadormd</a>
+    <a href="tel:+41791255352" class="contact-link"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.09 12 19.79 19.79 0 0 1 1 4.18 2 2 0 0 1 2.96 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 5.45 5.45l1.17-1.17a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+41 79 125 5352</a>
   </div>
 </section>
-
-<footer>© 2026 Dante Jr Salvador · European Center of Pharmaceutical Medicine, University of Basel</footer>
+<footer>© 2026 Dante Jr Salvador · <a href="https://ecpm.unibas.ch" target="_blank">European Center of Pharmaceutical Medicine, University of Basel</a></footer>
 </body>
 </html>
