@@ -29,8 +29,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;
 .nav-links a{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   text-decoration:none;color:var(--muted);transition:color .15s}
 .nav-links a:hover{color:var(--blue);text-decoration:none}
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;padding:80px 7vw 4rem;gap:5rem;background:var(--white)}
+.hero{min-height:60vh;display:flex;flex-direction:column;justify-content:center;padding:100px 7vw 5rem;background:var(--white)}
 .hero-kicker{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
   color:var(--blue);margin-bottom:1.5rem}
 .hero h1{font-family:var(--serif);font-size:clamp(3rem,5.5vw,5rem);
@@ -74,7 +73,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;
 .tl-body h3{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.2rem}
 .tl-body .org{font-size:.82rem;margin-bottom:.5rem;display:block;font-weight:400}
 .tl-body p{font-size:.83rem;color:var(--muted);line-height:1.7}
-.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
 .edu-cell{background:var(--white);padding:1.8rem}
 .edu-deg{font-family:var(--serif);font-size:.95rem;font-weight:400;color:var(--ink);margin-bottom:.35rem;line-height:1.35}
 .edu-univ{font-size:.82rem;font-weight:700;margin-bottom:.15rem;display:block}
@@ -94,7 +93,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;
 footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);font-size:.75rem;color:var(--faint);text-align:center;background:var(--white)}
 @media(max-width:760px){
   .hero{grid-template-columns:1fr;min-height:auto;padding-top:5rem;gap:3rem}
-  .hero-panel{grid-template-columns:1fr 1fr}
+  .edu-grid{grid-template-columns:1fr}
   .tl-item{grid-template-columns:1fr}
   .tl-period{text-align:left;padding-right:0;border-left:3px solid var(--blue);padding-left:.8rem;margin-bottom:.5rem}
   .nav-links{display:none}
@@ -122,19 +121,6 @@ footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);font-size:.75rem;colo
       <a href="https://orcid.org/0000-0002-4738-5628" target="_blank" class="cta cta-primary">ORCID</a>
       <a href="https://www.linkedin.com/in/dantesalvadormd/" target="_blank" class="cta cta-ghost">LinkedIn</a>
       <a href="mailto:dantesalvadormd@gmail.com" class="cta cta-ghost">Email</a>
-    </div>
-  </div>
-  <div class="hero-areas">
-    <p class="hero-areas-label">Research areas</p>
-    <div class="hero-area-tags">
-      <span>Health Economics</span>
-      <span>Economic Evaluation Alongside Trials</span>
-      <span>Clinical Epidemiology</span>
-      <span>Diabetes &amp; Cardiovascular Disease</span>
-      <span>Systematic Reviews &amp; Meta-Analysis</span>
-      <span>Health Technology Assessment</span>
-      <span>Real-World Data Analysis</span>
-      <span>Decision Analytic Modelling</span>
     </div>
   </div>
 </header>
