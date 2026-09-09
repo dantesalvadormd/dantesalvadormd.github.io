@@ -44,11 +44,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;
 .cta-primary{background:var(--blue);color:#fff}.cta-primary:hover{background:var(--blue-dk);text-decoration:none}
 .cta-ghost{border:1.5px solid var(--rule);color:var(--muted);background:transparent}
 .cta-ghost:hover{border-color:var(--blue);color:var(--blue);text-decoration:none}
-.hero-panel{display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
-.stat-box{background:var(--white);padding:2rem 1.5rem;text-align:center}
-.stat-n{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1;display:block;margin-bottom:.4rem}
-.stat-l{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);display:block}
+.hero-areas{display:flex;flex-direction:column;justify-content:center}
+.hero-areas-label{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.2rem}
+.hero-area-tags{display:flex;flex-wrap:wrap;gap:.6rem}
+.hero-area-tags span{display:inline-block;padding:.45rem 1rem;border:1px solid var(--rule);border-radius:2px;font-size:.78rem;font-weight:400;color:var(--body);background:var(--white)}
 .section{padding:7rem 7vw;border-top:1px solid var(--rule)}
 .section:nth-child(odd){background:var(--white)}.section:nth-child(even){background:var(--bg)}
 .sec-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.7rem}
@@ -125,11 +124,18 @@ footer{padding:2.5rem 7vw;border-top:1px solid var(--rule);font-size:.75rem;colo
       <a href="mailto:dantesalvadormd@gmail.com" class="cta cta-ghost">Email</a>
     </div>
   </div>
-  <div class="hero-panel">
-    <div class="stat-box"><span class="stat-n">13+</span><span class="stat-l">Publications</span></div>
-    <div class="stat-box"><span class="stat-n">PhD</span><span class="stat-l">Summa cum laude</span></div>
-    <div class="stat-box"><span class="stat-n">5</span><span class="stat-l">Postgrad degrees</span></div>
-    <div class="stat-box"><span class="stat-n">CH</span><span class="stat-l">Based in Basel</span></div>
+  <div class="hero-areas">
+    <p class="hero-areas-label">Research areas</p>
+    <div class="hero-area-tags">
+      <span>Health Economics</span>
+      <span>Economic Evaluation Alongside Trials</span>
+      <span>Clinical Epidemiology</span>
+      <span>Diabetes &amp; Cardiovascular Disease</span>
+      <span>Systematic Reviews &amp; Meta-Analysis</span>
+      <span>Health Technology Assessment</span>
+      <span>Real-World Data Analysis</span>
+      <span>Decision Analytic Modelling</span>
+    </div>
   </div>
 </header>
 <!-- RESEARCH -->
